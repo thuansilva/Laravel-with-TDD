@@ -2,7 +2,7 @@
 version: "3"
 services:
   laravel.test:
-    container_name: laravel-tdd
+    # container_name: laravel-tdd
     build:
       context: ./vendor/laravel/sail/runtimes/8.0
       dockerfile: Dockerfile
@@ -24,7 +24,7 @@ services:
       # - meilisearch
       # - selenium
   mysql:
-    container_name: mysql
+    # container_name: mysql
     image: "mysql:8.0"
     ports:
       - "${FORWARD_DB_PORT:-3306}:3306"
@@ -44,7 +44,7 @@ services:
       timeout: 5s
 
   adminer:
-    container_name: adminer
+    # container_name: adminer
     image: adminer
     restart: always
     ports:
@@ -53,6 +53,7 @@ services:
       - sail
     depends_on:
       - mysql
+
   # redis:
   #     image: 'redis:alpine'
   #     ports:
